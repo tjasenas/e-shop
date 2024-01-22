@@ -1,7 +1,25 @@
+// Get all products
 GET http://localhost:3000/api/products
-# content-type: application/json
 
-# {
-#     "name": "sample",
-#     "time": "Wed, 21 Oct 2015 18:27:50 GMT"
-# }
+###
+
+// Login
+POST http://localhost:3000/api/login
+content-type: application/json
+
+{
+    "email": "jonaitssi@gmail.com",
+    "password": "123456"
+}
+
+###
+
+//Register
+POST http://localhost:3000/api/register
+content-type: application/json
+
+{
+    "name": "jonaitis",
+    "email": "jonaitssi@gmail.com",
+    "password": "123456"
+}

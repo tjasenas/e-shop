@@ -4,6 +4,7 @@ const { dbConfig } = require("../../config");
 module.exports.dataFetch = async (sql, argArr = []) => {
   let connection;
   try {
+    console.log(argArr);
     connection = await mysql.createConnection(dbConfig);
     const [rows] = await connection.execute(sql, argArr);
     return [rows, null];
