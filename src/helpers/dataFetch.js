@@ -9,8 +9,10 @@ module.exports.dataFetch = async (sql, argArr = []) => {
     const [rows] = await connection.execute(sql, argArr);
     return [rows, null];
   } catch (error) {
+    console.log("error from dataFetch");
     return [null, error];
   } finally {
+    if (connection) connection.end();
     if (connection) connection.end();
   }
 };

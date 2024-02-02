@@ -17,7 +17,7 @@ module.exports.login = async (req, res) => {
       return res.json({ msg: "User password is incorrect" });
     }
 
-    const payload = { email, sub: row[0].id };
+    const payload = { email, sub: row[0].id, role: row[0].role };
     const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "1h" });
 
     res.json({
