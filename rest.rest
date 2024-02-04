@@ -30,3 +30,19 @@ content-type: application/json
 GET http://localhost:3000/api/product/1
 
 ###
+
+POST http://localhost:3000/api/product
+content-type: application/json
+
+{
+    "title": "First posts",
+    "description": "Very important programing language.",
+    "price": "25",
+    "stock": 100,
+    "cat_id": 1,
+    "image": "https://picsum.photos/id/2/800/600"
+}
+
+###
+
+GET http://localhost:3000/api/categories

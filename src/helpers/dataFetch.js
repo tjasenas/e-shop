@@ -4,15 +4,14 @@ const { dbConfig } = require("../../config");
 module.exports.dataFetch = async (sql, argArr = []) => {
   let connection;
   try {
-    console.log(argArr);
     connection = await mysql.createConnection(dbConfig);
-    const [rows] = await connection.execute(sql, argArr);
+    const [rows, error] = await connection.execute(sql, argArr);
     return [rows, null];
   } catch (error) {
     console.log("error from dataFetch");
+    console.log("error ====", error);
     return [null, error];
   } finally {
-    if (connection) connection.end();
     if (connection) connection.end();
   }
 };
